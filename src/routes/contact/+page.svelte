@@ -29,7 +29,7 @@
 	<section class="hidden">
 		<p>
 			My name is Enzo, im a freelance web developper<br />I love to create immersive experiences<br
-			/>Take the time to enjoy this and relax
+			/>Take the time to enjoy this moment, breath and relax
 		</p>
 	</section>
 </contact>

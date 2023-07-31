@@ -12,6 +12,7 @@
 		background: none;
 		border: none;
 		cursor: pointer;
+		animation: fadeIn 3s ease forwards;
 		text-transform: uppercase;
 		transition: 1s ease;
 		font-family: 'Cormorant Garamond', serif;
@@ -23,6 +24,18 @@
 		a {
 			text-decoration: none;
 			color: whitesmoke;
+		}
+	}
+	@keyframes fadeIn {
+		0% {
+			transform: translateX(-50%) scale(5);
+			opacity: 0;
+			filter: blur(5px);
+		}
+		100% {
+			transform: translateX(-50%) scale(1);
+			opacity: 1;
+			filter: blur(0px);
 		}
 	}
 </style>

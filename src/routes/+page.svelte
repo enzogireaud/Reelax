@@ -109,20 +109,40 @@
 		animate();
 	});
 </script>
+	<page>
+		<canvas bind:this={canvas} />
+		<h1>Click to enable audio<i class="fa-solid fa-headphones"></i></h1>
+		<Button />
+	</page>
 
-<page>
-	<canvas bind:this={canvas} />
-	<Button />
-</page>
 
 <style lang="scss">
-	page {
+	
+		
+		page {
 		position: absolute;
 		width: 100%;
 		height: 100vh;
+		overflow: hidden;
 		cursor: none;
-		animation: fadeIn 2s ease forwards;
+		canvas{
+			animation: fadeIn 3s ease forwards;
+		}
+		h1{
+			position: absolute;
+			bottom: 0%;
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 10px;
+			color: white;
+			transition: 0.3s ease;
+			animation: fadeOut 10s ease forwards;			
+		}
 	}
+
 	@keyframes fadeIn {
 		0% {
 			transform: scale(5);
@@ -135,4 +155,17 @@
 			filter: blur(0px);
 		}
 	}
+	@keyframes fadeOut {
+		0% {
+			opacity: 0;
+			filter: blur(0px);
+		}
+		50%{
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+	
 </style>
