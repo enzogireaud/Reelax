@@ -7,7 +7,7 @@
 	<link rel="shortcut-icon" href="/sleeping.png" />
 	<link rel="icon" href="/sleeping.png" />
 </svelte:head>
-<audio autoplay loop={true}>
+<audio autoplay loop>
 	<source src="/music.mp3" type="audio/mpeg" />
 </audio>
 <slot />
