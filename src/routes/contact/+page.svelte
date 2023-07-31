@@ -20,11 +20,13 @@
 </script>
 
 <contact>
-	<section>
-		<a href="/">Who am i ?</a>
+	<section class="1">
+		<a href="/" class="hidden">Who are we ?</a>
+		<p class="hidden firstp">The question of human identity has been debated for millennia by philosophers, thinkers, and scientists. It touches both on our intrinsic nature and our place in the universe. The complexity of this question lies in the fact that our identity is multi-dimensional and evolving.</p>
 	</section>
-	<section class="hidden">
-		<h1>Who am i ?</h1>
+	<section>
+		<h1 class="hidden">Who am i ?</h1>
+		<p class="hidden secondp">The quest for our identity is an exciting and never-ending journey, as we continue to grow, evolve, and redefine ourselves throughout our lives. It is through this self-exploration that we can find a deeper meaning to our existence and a connection with the world around us.</p>
 	</section>
 	<section class="hidden">
 		<p>
@@ -39,7 +41,7 @@
 		position: absolute;
 		background: #000;
 		width: 100%;
-		min-height: 300vh;
+		min-height: 250vh;
 		color: white;
 		animation: fadeIn 1s ease forwards;
 		display: flex;
@@ -49,6 +51,16 @@
 		align-items: center;
 		flex-direction: column;
 		overflow: hidden;
+		section{
+			text-align: center;
+			max-width: 400px;
+		}
+		.firstp{
+			transition-delay: 400ms;
+		}
+		.secondp{
+			transition-delay: 400ms;
+		}
 		h1 {
 			font-size: 5em;
 		}
