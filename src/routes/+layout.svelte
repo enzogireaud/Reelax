@@ -58,15 +58,13 @@
 <audio bind:this={audio} loop>
 	<source src="/music.mp3" type="audio/mpeg" />
 </audio>
-<div class="loader wrapper">
-	<div class="loader loader1">
+<div class="loader loader1">
+	<div>
 		<div>
 			<div>
 				<div>
 					<div>
-						<div>
-							<div />
-						</div>
+						<div />
 					</div>
 				</div>
 			</div>
@@ -88,12 +86,11 @@
 		font-size: 2em;
 		display: flex;
 		gap: 20px;
+		animation: animate 1.2s linear forwards;
+		animation-delay: 3.5s;
 	}
 	@keyframes animate {
 		0% {
-			opacity: 0;
-		}
-		50% {
 			opacity: 1;
 		}
 		100% {

@@ -80,7 +80,7 @@
 		height: 100vh;
 		width: 100%;
 		color: white;
-		animation: fadeIn 2s ease forwards;
+		animation: fadeIn 1.2s ease forwards;
 		overflow-y: scroll;
 		scroll-snap-type: y mandatory;
 		section {
@@ -107,11 +107,10 @@
 			overflow-x: scroll;
 			scroll-snap-type: x mandatory;
 			background: #0000004c url('/img/3.webp') center/cover;
-
 			background-blend-mode: darken;
 		}
 		.firstp {
-			transition-delay: 400ms;
+			transition-delay: 0.8s;
 			max-width: 400px;
 		}
 		.secondp {
@@ -125,6 +124,7 @@
 			text-decoration: none;
 			color: white;
 			font-size: 3em;
+			transition-delay: 0.5s;
 		}
 		p {
 			text-align: center;
