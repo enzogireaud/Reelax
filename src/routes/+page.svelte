@@ -5,6 +5,21 @@
 	let canvas: HTMLCanvasElement;
 
 	onMount(async () => {
+		// Setting display to block :
+		const contents = document.querySelectorAll('.content') as NodeListOf<HTMLDivElement>;
+		function showContents() {
+			// Affiche tous les éléments avec la classe ".content"
+			const loader = document.querySelector('.loader') as HTMLDivElement;
+			if (loader) {
+				if (loader.style.display === 'none') {
+					contents.forEach((content) => {
+						content.style.display = 'block';
+					});
+				}
+			}
+		}
+		showContents();
+
 		// Initialization
 		canvas.width = window.innerWidth;
 		canvas.height = window.innerHeight;
@@ -88,13 +103,24 @@
 
 		function init() {
 			circleArray = [];
-			for (let i = 0; i < 800; i++) {
-				let radius = Math.random() * 3 + 1;
-				let x = Math.random() * (window.innerWidth - radius * 2) + radius;
-				let y = Math.random() * (window.innerHeight - radius * 2) + radius;
-				let dx = Math.random() - 0.5;
-				let dy = Math.random() - 0.5;
-				circleArray.push(new Circle(x, y, dx, dy, radius));
+			if (canvas.width < 900) {
+				for (let i = 0; i < 50; i++) {
+					let radius = Math.random() * 3 + 1;
+					let x = Math.random() * (window.innerWidth - radius * 2) + radius;
+					let y = Math.random() * (window.innerHeight - radius * 2) + radius;
+					let dx = Math.random() - 0.5;
+					let dy = Math.random() - 0.5;
+					circleArray.push(new Circle(x, y, dx, dy, radius));
+				}
+			} else {
+				for (let i = 0; i < 800; i++) {
+					let radius = Math.random() * 3 + 1;
+					let x = Math.random() * (window.innerWidth - radius * 2) + radius;
+					let y = Math.random() * (window.innerHeight - radius * 2) + radius;
+					let dx = Math.random() - 0.5;
+					let dy = Math.random() - 0.5;
+					circleArray.push(new Circle(x, y, dx, dy, radius));
+				}
 			}
 		}
 
@@ -109,37 +135,21 @@
 		animate();
 	});
 </script>
-	<page>
-		<canvas bind:this={canvas} />
-		<h1>Click to enable audio<i class="fa-solid fa-headphones"></i></h1>
-		<Button />
-	</page>
 
+<page class="content">
+	<canvas bind:this={canvas} />
+	<Button />
+</page>
 
 <style lang="scss">
-	
-		
-		page {
+	page {
 		position: absolute;
 		width: 100%;
 		height: 100vh;
 		overflow: hidden;
 		cursor: none;
-		canvas{
+		canvas {
 			animation: fadeIn 3s ease forwards;
-		}
-		h1{
-			position: absolute;
-			bottom: 0%;
-			left: 50%;
-			transform: translateX(-50%);
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 10px;
-			color: white;
-			transition: 0.3s ease;
-			animation: fadeOut 10s ease forwards;			
 		}
 	}
 
@@ -160,12 +170,11 @@
 			opacity: 0;
 			filter: blur(0px);
 		}
-		50%{
+		50% {
 			opacity: 1;
 		}
 		100% {
 			opacity: 0;
 		}
 	}
-	
 </style>

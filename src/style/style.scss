@@ -25,3 +25,37 @@ body {
 	filter: blur(0);
 	transform: translateX(0);
 }
+.content {
+	display: none;
+}
+
+// Loader
+$grey: rgba(0, 0, 0, 0.5);
+$blue: rgba(227, 227, 232, 0.5);
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@mixin loaderDivMixin {
+	border-radius: 50%;
+	padding: 8px;
+	border: 2px solid transparent;
+	animation: rotate linear 3.5s infinite;
+}
+
+/* loader 1 */
+
+.loader1 div {
+	@include loaderDivMixin;
+	border-top-color: $grey;
+	border-bottom-color: $blue;
+}
