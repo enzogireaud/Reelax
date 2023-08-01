@@ -26,7 +26,7 @@
 			// Incrémentez la valeur de "progress" jusqu'à atteindre 100
 			if (progress < 100) {
 				progress += 1; // Augmentez la valeur pour contrôler la vitesse du loader
-				setTimeout(incrementLoader, 30); // Délai avant d'augmenter la valeur suivante (plus petit pour une meilleure animation)
+				setTimeout(incrementLoader, 40); // Délai avant d'augmenter la valeur suivante (plus petit pour une meilleure animation)
 			} else {
 				// Une fois le chargement terminé, affichez tous les éléments avec la classe ".content"
 				showContents();
@@ -72,7 +72,6 @@
 			</div>
 		</div>
 	</div>
-	<img src="/click.webp" alt="Click" />
 </div>
 <slot />
 
@@ -89,11 +88,6 @@
 		font-size: 2em;
 		display: flex;
 		gap: 20px;
-		img {
-			margin-top: 200px;
-			z-index: 10000;
-			animation: animate 3s linear forwards;
-		}
 	}
 	@keyframes animate {
 		0% {

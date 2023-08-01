@@ -70,7 +70,6 @@
 			My name is Enzo, im a freelance web developper<br />I love to create immersive experiences<br
 			/>Take the time to enjoy this moment, breath and relax
 		</p>
-		<img src="/click.webp" alt="Click icon" />
 	</section>
 </contact>
 
@@ -81,7 +80,7 @@
 		height: 100vh;
 		width: 100%;
 		color: white;
-		animation: fadeIn 1s ease forwards;
+		animation: fadeIn 2s ease forwards;
 		overflow-y: scroll;
 		scroll-snap-type: y mandatory;
 		section {
@@ -108,12 +107,8 @@
 			overflow-x: scroll;
 			scroll-snap-type: x mandatory;
 			background: #0000004c url('/img/3.webp') center/cover;
-			background-blend-mode: darken;
 
-			img {
-				padding-top: 50px;
-				animation: translate 4s ease infinite;
-			}
+			background-blend-mode: darken;
 		}
 		.firstp {
 			transition-delay: 400ms;
@@ -143,14 +138,6 @@
 		100% {
 			transform: translateY(0%);
 			filter: blur(0px);
-		}
-	}
-	@keyframes translate {
-		0% {
-			transform: translateX(50%);
-		}
-		100% {
-			transform: translateX(-50%);
 		}
 	}
 </style>
