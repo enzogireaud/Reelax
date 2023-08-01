@@ -16,11 +16,27 @@
 
 		hiddenElements = document.querySelectorAll('.hidden');
 		hiddenElements.forEach((el) => observer.observe(el));
+		//Show content
+
+		// Setting display to block :
+		const contents = document.querySelectorAll('.content') as NodeListOf<HTMLDivElement>;
+		function showContents() {
+			// Affiche tous les éléments avec la classe ".content"
+			const loader = document.querySelector('.loader') as HTMLDivElement;
+			if (loader) {
+				if (loader.style.display === 'none') {
+					contents.forEach((content) => {
+						content.style.display = 'block';
+					});
+				}
+			}
+		}
+		showContents();
 	});
 </script>
 
 <contact class="content">
-	<section class="1">
+	<section id="section-1">
 		<a href="/" class="hidden">Who are we ?</a>
 		<p class="hidden firstp">
 			The question of human identity has been debated for millennia by philosophers, thinkers, and
@@ -29,7 +45,7 @@
 			evolving.
 		</p>
 	</section>
-	<section>
+	<section id="section-2">
 		<h1 class="hidden">Who am i ?</h1>
 		<p class="hidden secondp">
 			The quest for our identity is an exciting and never-ending journey, as we continue to grow,
@@ -37,8 +53,8 @@
 			we can find a deeper meaning to our existence and a connection with the world around us.
 		</p>
 	</section>
-	<section class="hidden">
-		<p>
+	<section id="section-3">
+		<p class="hidden">
 			My name is Enzo, im a freelance web developper<br />I love to create immersive experiences<br
 			/>Take the time to enjoy this moment, breath and relax
 		</p>
@@ -49,26 +65,36 @@
 	contact {
 		position: absolute;
 		background: #000;
+		height: 100vh;
 		width: 100%;
-		min-height: 250vh;
 		color: white;
 		animation: fadeIn 1s ease forwards;
-		display: flex;
-		padding: 300px 0;
-		justify-content: space-between;
-		gap: 60px;
-		align-items: center;
-		flex-direction: column;
-		overflow: hidden;
+		overflow-y: scroll;
+		scroll-snap-type: y mandatory;
 		section {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
 			text-align: center;
-			max-width: 400px;
+			width: 100%;
+			height: 200vh;
+			scroll-snap-align: center;
+		}
+		#section-1 {
+			height: 100vh;
+			background: rgb(65, 63, 63);
+		}
+		#section-2 {
+			background: rgb(84, 80, 80);
 		}
 		.firstp {
 			transition-delay: 400ms;
+			max-width: 400px;
 		}
 		.secondp {
 			transition-delay: 400ms;
+			max-width: 400px;
 		}
 		h1 {
 			font-size: 5em;
