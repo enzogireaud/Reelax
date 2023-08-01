@@ -72,7 +72,7 @@
 			</div>
 		</div>
 	</div>
-	<img src="/click.png" alt="Click" />
+	<img src="/click.webp" alt="Click" />
 </div>
 <slot />
 
