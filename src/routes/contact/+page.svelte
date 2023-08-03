@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { gsap } from 'gsap';
 
 	let hiddenElements;
 	let hiddenElements2;
@@ -7,6 +8,12 @@
 	let observer2: any;
 
 	onMount(() => {
+		gsap.from('.contact', {
+			y: 1200,
+			duration: 1,
+			ease: 'power2.linear'
+		});
+
 		observer = new window.IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
@@ -47,7 +54,7 @@
 	});
 </script>
 
-<contact class="content">
+<contact class="contact content">
 	<section id="section-1" class="hidden2">
 		<a href="/" class="hidden">Who are we ?</a>
 		<p class="hidden firstp">
@@ -80,7 +87,6 @@
 		height: 100vh;
 		width: 100%;
 		color: white;
-		animation: fadeIn 1.2s ease forwards;
 		overflow-y: scroll;
 		scroll-snap-type: y mandatory;
 		section {
@@ -128,16 +134,6 @@
 		}
 		p {
 			text-align: center;
-		}
-	}
-	@keyframes fadeIn {
-		0% {
-			transform: translateY(100%);
-			filter: blur(5px);
-		}
-		100% {
-			transform: translateY(0%);
-			filter: blur(0px);
 		}
 	}
 </style>
